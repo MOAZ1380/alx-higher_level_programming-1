@@ -1,17 +1,17 @@
 #!/usr/bin/python3
-from sys import argv
+from sys import argv, exit
 from calculator_1 import add, sub, mul, div
 
 
 def calculate(arr):
     if len(arr) != 3:
         print("Usage: ./100-my_calculator.py <a> <operator> <b>")
-        return (1)
+        exit(1)
     else:
         op = (arr[1])
         if op not in ['+', '-', '*', '/']:
             print("Unknown operator. Available operators: +, -, * and /")
-            return (1)
+            exit(1)
         a = int(arr[0])
         b = int(arr[2])
         print(a, op, b, "=", end=" ")
@@ -23,7 +23,7 @@ def calculate(arr):
             print(mul(a, b))
         else:
             print(div(a, b))
-    return (0)
+    exit(0)
 
 
 if (__name__ == '__main__'):
