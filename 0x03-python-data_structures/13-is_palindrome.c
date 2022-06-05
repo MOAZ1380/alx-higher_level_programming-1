@@ -14,16 +14,16 @@ int is_palindrome(listint_t **head)
 
 	if (current == NULL)
 		return (1);
-	while(current)
+	while (current)
 		l++, current = current->next;
 	p = malloc(l * sizeof(*p));
 	current = *head, i = 0;
-	while(current)
+	while (current)
 		p[i++] = current->n, current = current->next;
 	i = 0, l -= 1;
-	while(i <= l)
+	while (i <= l)
 	{
-		if(p[i++] != p[l--])
+		if (p[i++] != p[l--])
 			return (0);
 	}
 	i = 0;
