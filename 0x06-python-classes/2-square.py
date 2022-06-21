@@ -18,7 +18,7 @@ class Square:
     """A class with a 'size' attribute"""
     def __init__(self, size=0):
         """
-        Attributes:
+        Args:
             self (Square): object
             size (int): size of square
         """

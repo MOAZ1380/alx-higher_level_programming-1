@@ -22,9 +22,9 @@ class Square:
     """
     def __init__(self, size=0):
         """
-            Attributes:
-                self (Square): object
-                size (int): size of square
+        Args:
+            self (Square): object
+            size (int): size of square
         """
         if type(size) is not int:
             raise TypeError('size must be an integer')
@@ -34,7 +34,7 @@ class Square:
 
     def area(self):
         """
-        Attributes:
+        Args:
             self (Square): instance of class
 
         Return:

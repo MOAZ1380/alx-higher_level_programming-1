@@ -13,5 +13,9 @@ class Square:
     A square with a 'size' attribute
     """
     def __init__(self, size):
-        """attribute instantiation"""
+        """
+        Args:
+            self (Square): class object.
+            size (int): object dimension
+        """
         self.__size = size
