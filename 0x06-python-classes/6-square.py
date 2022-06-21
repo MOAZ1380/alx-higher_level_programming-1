@@ -50,8 +50,14 @@ class Square:
 
     @size.setter
     def size(self, value):
-        """size setter"""
-        if type(value) is not int:
+        """
+        size setter
+
+        Raises:
+            TypeError: if value is not an integer
+            ValueError: if value is -ve
+        """
+        if isinstance(value, int) is False:
             raise TypeError('size must be an integer')
         if value < 0:
             raise ValueError('size must be >= 0')
@@ -74,14 +80,17 @@ class Square:
 
         Args:
             value (tuple): New Square position
+
+        Raises:
+            TypeError: if value is not a tuple and elements are not integers
         """
-        typeTuple = isinstance(value, tuple)
-        typeInt = (isinstance(value[0], int) and isinstance(value[1], int))
-        positive = (value[0] >= 0 and value[1] >= 0)
-        if typeTuple and typeInt and positive and len(value) == 2:
-            self.__position = value
-        else:
-            raise TypeError('position must be a tuple of 2 positive integers')
+        if not isinstance(value, tuple) or len(value) != 2:
+            raise TypeError("position must be a tuple of 2 positive integers")
+        if not isinstance(value[0], int) or not isinstance(value[1], int):
+            raise TypeError("position must be a tuple of 2 positive integers")
+        if value[0] < 0 or value[1] < 0:
+            raise TypeError("position must be a tuple of 2 positive integers")
+        self.__position = value
 
     def area(self):
         """
@@ -96,9 +105,11 @@ class Square:
         """
         Print the Square to stdout using '#'
         """
-        if self.size != 0:
-            print("{}".format('\n' * self.position[1]), end="")
-            for i in range(self.size):
-                print("{}{}".format(" " * self.position[0], "#" * self.size))
+        if self.size == 0:
+            print()
         else:
-            print("")
+            if self.position[1] > 0:
+                for i in range(self.position[1]):
+                    print('\n', end="")
+            for i in range(self.size):
+                print("{}{}".format(' ' * self.position[0], '#' * self.size))
