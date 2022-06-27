@@ -106,14 +106,17 @@ class Rectangle:
             rect_1 (Rectangle)
             rect_2 (Rectangle)
 
+        Raises:
+            TypeError: if neither object instances are of type Rectangle
+
         Returns:
             The biggest of both or rect_1 if they are equal
         """
         if not isinstance(rect_1, Rectangle):
-            raise TypeError('rect_1 must be an instance of Rectangle')
+            raise TypeError("rect_1 must be an instance of Rectangle")
         if not isinstance(rect_2, Rectangle):
-            raise TypeError('rect_2 must be an instance of Rectangle')
-        if rect_1 > rect_2 or rect_1 == rect_2:
+            raise TypeError("rect_2 must be an instance of Rectangle")
+        if rect_1.area() >= rect_2.area():
             return rect_1
         return rect_2
 
@@ -146,63 +149,3 @@ class Rectangle:
         """
         type(self).number_of_instances -= 1
         print("Bye rectangle...")
-
-    def __eq__(self, other):
-        """
-        Args:
-            self (Square): Square instance object
-            other (Square): Square instance object
-        Returns:
-            bool: Equality definition
-        """
-        return self.area() == other.area()
-
-    def __ne__(self, other):
-        """
-        Args:
-            self (Square): Square instance object
-            other (Square): Square instance object
-        Returns:
-            bool: None equality definition
-        """
-        return self.area() != other.area()
-
-    def __gt__(self, other):
-        """
-        Args:
-            self (Square): Square instance object
-            other (Square): Square instance object
-        Returns:
-            bool: Greater than definition
-        """
-        return self.area() > other.area()
-
-    def __ge__(self, other):
-        """
-        Args:
-            self (Square): Square instance object
-            other (Square): Square instance object
-        Returns:
-            bool: Greater than or equals to definition
-        """
-        return self.area() >= other.area()
-
-    def __lt__(self, other):
-        """
-        Args:
-            self (Square): Square instance object
-            other (Square): Square instance object
-        Returns:
-            bool: Less than definition
-        """
-        return self.area() < other.area()
-
-    def __le__(self, other):
-        """
-        Args:
-            self (Square): Square instance object
-            other (Square): Square instance object
-        Returns:
-            bool: Less than or equals to definition
-        """
-        return self.area() <= other.area()
