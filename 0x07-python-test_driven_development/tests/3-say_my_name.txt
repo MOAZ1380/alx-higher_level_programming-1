@@ -10,36 +10,57 @@ Import ``say_my_name`` from ``3-say_my_name``
 
 Now use it:
 
+TypeError checks
+================
+
+::
+
 	>>> say_my_name([])
-	Traceback (most recent call last)
+	Traceback (most recent call last):
 		...
 	TypeError: first_name must be a string
 
 	>>> say_my_name(1.33)
-	Traceback (most recent call last)
+	Traceback (most recent call last):
 		...
 	TypeError: first_name must be a string
 
 	>>> say_my_name("", [])
-	Traceback (most recent call last)
+	Traceback (most recent call last):
 		...
 	TypeError: last_name must be a string
 
 	>>> say_my_name('', 12)
-	Traceback (most recent call last)
+	Traceback (most recent call last):
 		...
 	TypeError: last_name must be a string
 
 	>>> say_my_name((), {})
-	Traceback (most recent call last)
+	Traceback (most recent call last):
 		...
 	TypeError: first_name must be a string
+
+
+Checks with a single valid argument
+===================================
+
+::
 
 	>>> say_my_name('Bob')
 	My name is Bob 
 
+
+Checks with two non-empty valid arguments
+=========================================
+
+::
+
 	>>> say_my_name('Walter', 'White')
 	My name is Walter White
+
+
+Checks with two empty valid argument(s)
+=======================================
 
 	>>> say_my_name("")
 	My name is  
