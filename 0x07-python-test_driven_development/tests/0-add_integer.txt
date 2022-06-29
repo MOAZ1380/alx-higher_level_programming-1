@@ -6,9 +6,15 @@ Using ``add_integer``
 
 Import ``add_integer`` from ``0-add_integer`` module:
 
-	>>> add_integer = __import__('0-add_integer').add_intger
+	>>> add_integer = __import__('0-add_integer').add_integer
 
 Now use it:
+
+Invalid arguments
+=================
+
+::
+
 	>>> add_integer('a')
 	Traceback (most recent call last):
 		...
@@ -38,6 +44,12 @@ Now use it:
 	Traceback (most recent call last):
 		...
 	TypeError: b must be an integer
+
+
+Valid arguments
+===============
+
+::
 
 	>>> add_integer(0)
 	98
