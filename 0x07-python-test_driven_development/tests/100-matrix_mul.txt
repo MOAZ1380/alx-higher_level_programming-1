@@ -10,7 +10,26 @@ Import ``matrix_mul`` from ``100-matrix_mul``
 
 Now use it:
 
+Checks for incomplete arguments
+===============================
+
+::
+
+	>>> matrix_mul([[]]) 	#doctest: +NORMALIZE_WHITESPACE
+	Traceback (most recent call last):
+		...
+	TypeError: matrix_mul() missing 1 required positional argument:
+	 'm_b'
+
+	>>> matrix_mul()	#doctest: +NORMALIZE_WHITESPACE
+	Traceback (most recent call last):
+		...
+	TypeError: matrix_mul() missing 2 required positional arguments:
+	 'm_a' and 'm_b'
+
+
 Check that `m_a` and `m_b` are lists
+====================================
 
 ::
 
@@ -24,7 +43,9 @@ Check that `m_a` and `m_b` are lists
 		...
 	TypeError: m_b must be a list
 
+
 Check that `m_a` and `m_b` are list of lists
+============================================
 
 ::
 
@@ -38,8 +59,9 @@ Check that `m_a` and `m_b` are list of lists
 		...
 	TypeError: m_b must be a list of lists
 
-Check that outter list is not empty
 
+Check that outter list is not empty
+===================================
 ::
 
 	>>> matrix_mul([], [[1, 2]])
@@ -52,7 +74,9 @@ Check that outter list is not empty
 		...
 	ValueError: m_b can't be empty
 
+
 Check that inner lists are not empty
+====================================
 
 ::
 
@@ -66,7 +90,9 @@ Check that inner lists are not empty
 		...
 	ValueError: m_b can't be empty
 
+
 Check that lists contains only integers and floats
+==================================================
 
 ::
 
@@ -80,7 +106,9 @@ Check that lists contains only integers and floats
 		...
 	TypeError: m_b should contain only integers or floats
 
+
 Check that each row in `m_a` and `m_b` are same size
+====================================================
 
 ::
 
@@ -94,7 +122,9 @@ Check that each row in `m_a` and `m_b` are same size
 		...
 	TypeError: each row of m_b must be of the same size
 
+
 Check that `m_a` and `m_b` can be multiplied
+============================================
 
 ::
 
@@ -111,7 +141,9 @@ Check that `m_a` and `m_b` can be multiplied
 		...
 	ValueError: m_a and m_b can't be multiplied
 
+
 Validate on valid integer values
+================================
 
 ::
 

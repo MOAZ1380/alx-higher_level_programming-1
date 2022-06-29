@@ -10,6 +10,19 @@ Import ``say_my_name`` from ``3-say_my_name``
 
 Now use it:
 
+Checks for no arguments
+=======================
+
+::
+
+	>>> say_my_name()	#doctest: +NORMALIZE_WHITESPACE
+	Traceback (most recent call last):
+		...
+	TypeError: say_my_name() missing 1 required positional argument:
+	 'first_name'
+	
+
+
 TypeError checks
 ================
 
@@ -68,7 +81,7 @@ Checks with empty string argument(s)
 	>>> say_my_name("", "Smith")
 	My name is  Smith
 
-	>>> say_my_name("", "")
+	>>> say_my_name(first_name="", last_name="")
 	My name is  
 
 End tests
