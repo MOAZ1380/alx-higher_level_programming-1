@@ -92,25 +92,6 @@ def checkRowSize(m_a, m_b):
         raise TypeError('each row of m_b must be of the same size')
 
 
-def transpose(matrix):
-    """
-    Transposes a matrix
-
-    Args:
-        matrix (list)
-
-    Returns:
-        trans (list)
-    """
-    trans = []
-    for col in range(len(matrix[0])):
-        new = []
-        for row in range(len(matrix)):
-            new.append(matrix[row][col])
-        trans.append(new)
-    return trans
-
-
 def matrix_mul(m_a, m_b):
     """
     Multiply matrix m_a and m_b
@@ -132,13 +113,12 @@ def matrix_mul(m_a, m_b):
     if len(m_a[0]) != len(m_b):
         raise ValueError("m_a and m_b can't be multiplied")
     product = []
-    transposed = transpose(m_b)
     for row in m_a:
         new = []
-        for col in transposed:
+        for x in range(len(m_b[0])):
             result = 0
-            for x in range(len(transposed)):
-                result += row[x] * col[x]
+            for y in range(len(m_b)):
+                result += row[y] * m_b[y][x]
             new.append(result)
         product.append(new)
     return product
