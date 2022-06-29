@@ -9,10 +9,22 @@ Import ``text_indentation`` from ``5-text_indentation`` module:
 	>>> text_indentation = __import__('5-text_indentation').text_indentation
 
 Now use it:
+
+Invalid Data type
+=================
+
+::
+
 	>>> text_indentation(2)
-	Traceback (most recent call last)
+	Traceback (most recent call last):
 		...
 	TypeError: text must be a string
+
+
+Space at the start and end
+==========================
+
+::
 
 	>>> text_indentation(" Lorem ipsum.")
 	Lorem ipsum.
@@ -22,6 +34,12 @@ Now use it:
 	Lorem ipsum.
 	<BLANKLINE>
 
+
+No space after specal `.?:`
+===========================
+
+::
+
 	>>> text_indentation("Lorem ipsum.Lorem ipsum?Lorem ipsum:")
 	Lorem ipsum.
 	<BLANKLINE>
@@ -29,6 +47,11 @@ Now use it:
 	<BLANKLINE>
 	Lorem ipsum:
 	<BLANKLINE>
+
+Single inner spaces after `.?:`
+===============================
+
+::
 
 	>>> text_indentation("Lorem ipsum: Lorem ipsum? Lorem ipsum. ")
 	Lorem ipsum:
@@ -38,6 +61,12 @@ Now use it:
 	Lorem ipsum.
 	<BLANKLINE>
 
+
+Multiply spaces after `.?:`
+===========================
+
+::
+
 	>>> text_indentation("Lorem ipsum:  Lorem ipsum?  Lorem ipsum.  ")
 	Lorem ipsum:
 	<BLANKLINE>
@@ -46,13 +75,17 @@ Now use it:
 	Lorem ipsum.
 	<BLANKLINE>
 
+
+No space(s) and `.?:` at the end
+================================
+
+::
+
 	>>> text_indentation("Lorem ipsum: Lorem ipsum? Lorem ipsum")
 	Lorem ipsum:
 	<BLANKLINE>
 	Lorem ipsum?
 	<BLANKLINE>
-	Lorem ipum
-
-End test
+	Lorem ipsum
 
 End of test
