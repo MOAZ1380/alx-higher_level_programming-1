@@ -22,7 +22,7 @@ void print_python_string(PyObject *p)
 	}
 	else
 	{
-		printf("  ERROR] Invalid String Object\n");
+		printf("  [ERROR] Invalid String Object\n");
 	}
 }
 
