@@ -8,20 +8,17 @@
  */
 void print_python_string(PyObject *p)
 {
-	long int size;
-
 	printf("[.] string object info\n");
 
 	if (PyUnicode_Check(p))
 	{
-		size = ((PyASCIIObject *)(p))->length;
-
 		if (PyUnicode_IS_COMPACT_ASCII(p))
 			printf("  type: compact ascii\n");
 		else
 			printf("  type: compact unicode object\n");
-		printf("  length: %ld\n", size);
-		printf("  value: %ls\n", PyUnicode_AsWideCharString(p, &size));
+
+		printf("  length: %zu\n", PyUnicode_GET_LENGTH(p));
+		printf("  value: %s\n", PyUnicode_AsUTF8(p));
 	}
 	else
 	{
