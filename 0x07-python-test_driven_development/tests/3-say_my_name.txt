@@ -59,7 +59,7 @@ Checks with two non-empty valid arguments
 	My name is Walter White
 
 
-Checks with two empty valid argument(s)
+Checks with empty string argument(s)
 =======================================
 
 	>>> say_my_name("")
@@ -67,5 +67,8 @@ Checks with two empty valid argument(s)
 
 	>>> say_my_name("", "Smith")
 	My name is  Smith
+
+	>>> say_my_name("", "")
+	My name is  
 
 End tests

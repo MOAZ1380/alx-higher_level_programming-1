@@ -10,6 +10,18 @@ Import ``print_square`` function from ``4-print_square``
 
 Now use it:
 
+Check without arguments
+=======================
+
+::
+
+	>>> print_square()	#doctest: +NORMALIZE_WHITESPACE
+	Traceback (most recent call last):
+		...
+	TypeError: print_square() missing 1 required positional argument:
+	 'size'
+
+
 Invalid argument type
 =====================
 
