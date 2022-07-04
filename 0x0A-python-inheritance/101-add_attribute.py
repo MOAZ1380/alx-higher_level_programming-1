@@ -17,7 +17,7 @@ def add_attribute(obj, attr, value):
     Raises:
         TypeError (Exception): if an attribute can not be added to `obj`
     """
-    if '__weakref__' in dir(obj):
+    if hasattr(obj, '__dict__'):
         obj.__setattr__(attr, value)
     else:
         raise TypeError('can\'t add new attribute')
