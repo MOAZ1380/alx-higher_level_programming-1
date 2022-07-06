@@ -34,7 +34,7 @@ def parseLogs():
                 except KeyError:
                     statusCodes[line[-2]] = 1
 
-            except IndexError:
+            except (IndexError, ValueError):
                 pass
 
             if lineNumber == 10:
