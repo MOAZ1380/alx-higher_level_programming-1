@@ -7,7 +7,7 @@ TODOS:
 """
 
 import turtle
-from os import path
+#from os import path
 from csv import DictReader, DictWriter
 from json import dumps, loads
 
