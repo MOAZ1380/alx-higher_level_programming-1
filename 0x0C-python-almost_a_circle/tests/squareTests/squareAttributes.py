@@ -47,10 +47,12 @@ class TestSquareSize(unittest.TestCase):
             """ size as bytes """
             Square(b'Alx')
 
+    def testWithZeroSizeValue(self):
         with self.assertRaisesRegex(ValueError, "width must be > 0"):
-            """ size = 0 """
             Square(0)
-            """ size = -ve """
+
+    def testWithNegativeSizeValue(self):
+        with self.assertRaisesRegex(ValueError, "width must be > 0"):
             Square(-1)
 
 

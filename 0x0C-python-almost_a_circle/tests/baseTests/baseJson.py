@@ -100,6 +100,10 @@ class TestSaveToJsonFile(unittest.TestCase):
         with open("Rectangle.json", encoding="utf-8") as file:
             self.assertEqual("[]", file.read())
 
+        Square.save_to_file(None)
+        with open("Square.json", encoding='utf-8') as file:
+            self.assertEqual("[]", file.read())
+
     def testSaveEmptyListToJson(self):
         Square.save_to_file([])
         with open("Square.json", encoding="utf-8") as file:

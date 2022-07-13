@@ -47,15 +47,21 @@ class TestRectangleWidth(unittest.TestCase):
             """ Width as bytes """
             Rectangle(b'Alx', 2)
 
-    def testInvalidWidthValue(self):
-
+    def testWithZeroWidthValue(self):
         with self.assertRaisesRegex(ValueError, "width must be > 0"):
-
-            """ Width = zero """
             Rectangle(0, 5)
 
-            """ Width = -ve """
+    def testWithNegativeWidthValue(self):
+        with self.assertRaisesRegex(ValueError, "width must be > 0"):
             Rectangle(-1, 5)
+
+    def testWithZeroHeightValue(self):
+        with self.assertRaisesRegex(ValueError, "height must be > 0"):
+            Rectangle(1, 0)
+
+    def testWithNegativeHeightValue(self):
+        with self.assertRaisesRegex(ValueError, "height must be > 0"):
+            Rectangle(5, -1)
 
 
 class TestRectangleHeight(unittest.TestCase):
