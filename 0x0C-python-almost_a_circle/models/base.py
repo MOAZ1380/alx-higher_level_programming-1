@@ -1,7 +1,10 @@
 #!/usr/bin/python3
 
 """
-A module: Defines a base class
+A module: Defines a Base class
+
+TODOS:
+    * Create a Parent class with a private attribute `__nb_objects`
 """
 
 from os import path
