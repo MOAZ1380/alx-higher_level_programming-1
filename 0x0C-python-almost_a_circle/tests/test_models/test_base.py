@@ -5,14 +5,14 @@ Test model for Base class
 """
 
 import unittest
-from models.baseTests.baseInstances import BaseTestInstantiation as B1
-from models.baseTests.baseJson import TestJsonStringFormat as B2
-from models.baseTests.baseJson import TestSaveToJsonFile as B3
-from models.baseTests.baseJson import TestFromJsonStringToPythonList as B4
-from models.baseTests.baseCreate import TestBaseCreateMethod as B5
-from models.baseTests.baseJson import TestLoadFromJsonFile as B6
-from models.baseTests.baseCsv import TestSaveToCsvFile as B7
-from models.baseTests.baseCsv import TestLoadFromCsvFile as B8
+from tests.baseTests.baseInstances import BaseTestInstantiation as B1
+from tests.baseTests.baseJson import TestJsonStringFormat as B2
+from tests.baseTests.baseJson import TestSaveToJsonFile as B3
+from tests.baseTests.baseJson import TestFromJsonStringToPythonList as B4
+from tests.baseTests.baseCreate import TestBaseCreateMethod as B5
+from tests.baseTests.baseJson import TestLoadFromJsonFile as B6
+from tests.baseTests.baseCsv import TestSaveToCsvFile as B7
+from tests.baseTests.baseCsv import TestLoadFromCsvFile as B8
 
 
 loader = unittest.TestLoader()

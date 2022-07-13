@@ -5,15 +5,15 @@ Test model for Base class
 """
 
 import unittest
-from models.squareTests.squareInstances import TestSquareInstantiation as S10
-from models.squareTests.squareAttributes import TestSquareSize as S20
-from models.squareTests.squareAttributes import TestSquareX as S21
-from models.squareTests.squareAttributes import TestSquareY as S22
-from models.squareTests.squareArea import TestMethodSquareArea as S23
-from models.squareTests.squareDisplay import TestSquareDisplay as S24
-from models.squareTests.squareDisplay import TestSquareString as S25
-from models.squareTests.squareUpdate import TestSquareUpdateMethod as S26
-from models.squareTests.squareDisplay import TestSquareDictionary as S27
+from tests.squareTests.squareInstances import TestSquareInstantiation as S10
+from tests.squareTests.squareAttributes import TestSquareSize as S20
+from tests.squareTests.squareAttributes import TestSquareX as S21
+from tests.squareTests.squareAttributes import TestSquareY as S22
+from tests.squareTests.squareArea import TestMethodSquareArea as S23
+from tests.squareTests.squareDisplay import TestSquareDisplay as S24
+from tests.squareTests.squareDisplay import TestSquareString as S25
+from tests.squareTests.squareUpdate import TestSquareUpdateMethod as S26
+from tests.squareTests.squareDisplay import TestSquareDictionary as S27
 
 TestLoader = unittest.TestLoader()
 

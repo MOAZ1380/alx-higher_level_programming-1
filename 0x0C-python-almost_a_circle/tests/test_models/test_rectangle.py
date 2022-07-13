@@ -5,16 +5,16 @@ Test model for Base class
 """
 
 import unittest
-from models.rectangleTests.rectInstances import TestRectangleInstantiation
-from models.rectangleTests.rectAttributes import TestRectangleWidth as R20
-from models.rectangleTests.rectAttributes import TestRectangleHeight as R21
-from models.rectangleTests.rectAttributes import TestRectangleX as R22
-from models.rectangleTests.rectAttributes import TestRectangleY as R23
-from models.rectangleTests.rectArea import TestMethodRectangleArea as R24
-from models.rectangleTests.rectDisplay import TestRectangleDisplay as R25
-from models.rectangleTests.rectDisplay import TestRectangleString as R26
-from models.rectangleTests.rectUpdate import TestRectangleUpdateMethod as R27
-from models.rectangleTests.rectDisplay import TestRectangleDictionary as R28
+from tests.rectangleTests.rectInstances import TestRectangleInstantiation
+from tests.rectangleTests.rectAttributes import TestRectangleWidth as R20
+from tests.rectangleTests.rectAttributes import TestRectangleHeight as R21
+from tests.rectangleTests.rectAttributes import TestRectangleX as R22
+from tests.rectangleTests.rectAttributes import TestRectangleY as R23
+from tests.rectangleTests.rectArea import TestMethodRectangleArea as R24
+from tests.rectangleTests.rectDisplay import TestRectangleDisplay as R25
+from tests.rectangleTests.rectDisplay import TestRectangleString as R26
+from tests.rectangleTests.rectUpdate import TestRectangleUpdateMethod as R27
+from tests.rectangleTests.rectDisplay import TestRectangleDictionary as R28
 
 R10 = TestRectangleInstantiation
 
