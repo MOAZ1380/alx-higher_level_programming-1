@@ -1,5 +1,4 @@
 #!/usr/bin/python3
-
 """
 A module: Defines a Base class
 
@@ -7,6 +6,7 @@ TODOS:
     * Create a Parent class with a private attribute `__nb_objects`
 """
 
+import turtle
 from os import path
 from csv import DictReader, DictWriter
 from json import dumps, loads
@@ -149,3 +149,51 @@ class Base:
                         obj[k] = int(v)
                     objs.append(cls.create(**obj))
         return objs
+
+    @staticmethod
+    def draw(list_rectangles, list_squares):
+        """
+        Draws Rectangle and square instances on a GUI
+        """
+        if list_rectangles is not None and list_rectangles != []:
+            for rec in list_rectangles:
+                rd = rec.to_dictionary()
+                turtle.pu()
+                turtle.speed(1)
+                turtle.setpos(rd['x'], rd['y'])
+                turtle.pd()
+                turtle.shape("Rectangle")
+                turtle.pensize(3)
+                turtle.color("blue", "red")
+                turtle.begin_fill()
+                turtle.forward(rd['width'])
+                turtle.right(90)
+                turtle.forward(rd['height'])
+                turtle.right(90)
+                turtle.forward(rd['width'])
+                turtle.right(90)
+                turtle.forward(rd['height'])
+                turtle.end_fill()
+                turtle.pu()
+
+        if list_squares is not None and list_squares != []:
+            for sq in list_squares:
+                sd = sq.to_dictionary()
+                turtle.pu()
+                turtle.speed(1)
+                turtle.setpos(sd['x'], sd['y'])
+                turtle.pd()
+                turtle.shape("Square")
+                turtle.pensize(3)
+                turtle.begin_fill()
+                turtle.forward(sd['size'])
+                turtle.color("blue", "red")
+                turtle.right(90)
+                turtle.forward(sd['size'])
+                turtle.right(90)
+                turtle.forward(sd['size'])
+                turtle.right(90)
+                turtle.forward(sd['size'])
+                turtle.end_fill()
+                turtle.pu()
+        turtle.exitonclick()
