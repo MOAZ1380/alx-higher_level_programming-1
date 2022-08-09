@@ -6,6 +6,4 @@ UPDATE
 SET
     score = 10
 WHERE
-    name = 'Bob'
-LIMIT
-    1;
+    name = 'Bob';
