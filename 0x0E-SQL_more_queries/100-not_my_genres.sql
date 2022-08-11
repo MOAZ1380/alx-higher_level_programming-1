@@ -2,22 +2,26 @@
 -- Results must be sorted in descending order by their rating
 -- The database name will be passed as an argument of the mysql command
 SELECT
-    tg.name AS 'name'
+    name
 FROM
-    tv_genres tg
+    tv_genres
 WHERE
     name NOT IN
-    (SELECT tg.name AS 'name'
-    FROM
-        tv_genres tg
-    LEFT JOIN
-        tv_show_genres tsg
-    ON
-        tg.id = tsg.genre_id
-    LEFT JOIN
-        tv_shows ts
-    ON
-        tsg.show_id = ts.id
-    WHERE 
-        ts.title = 'Dexter')
-ORDER BY name ASC;
+    (
+        SELECT
+            name
+        FROM
+            tv_genres
+        LEFT JOIN
+            tv_show_genres
+        ON
+            tv_genres.id = tv_show_genres.genre_id
+        LEFT JOIN
+            tv_shows
+        ON
+            tv_show_genres.show_id = tv_shows.id
+        WHERE 
+            tv_shows.title = 'Dexter'
+    )
+ORDER BY
+    name ASC;

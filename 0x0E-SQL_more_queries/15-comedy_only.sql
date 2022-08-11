@@ -2,18 +2,18 @@
 -- Results must be sorted in ascending order by the show title
 -- The database name will be passed as an argument of the mysql command
 SELECT
-    t.title
+    title
 FROM
-    tv_shows AS t
+    tv_shows
 INNER JOIN
-    tv_show_genres AS s
+    tv_show_genres
 ON
-    t.id = s.show_id
+    tv_shows.id = tv_show_genres.show_id
 INNER JOIN
-    tv_genres AS g
+    tv_genres
 ON
-    g.id = s.genre_id
+    tv_genres.id = tv_show_genres.genre_id
 WHERE
-    g.name = "Comedy"
+    tv_genres.name = "Comedy"
 ORDER BY
-    t.title;
+    title ASC;

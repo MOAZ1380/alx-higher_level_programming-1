@@ -2,16 +2,16 @@
 -- database hbtn_0d_tvshows.
 -- Records are ordered by ascending show title and genre name.
 SELECT
-    t.title, g.name
+    title, name
 FROM
-    tv_shows AS t
+    tv_shows
 LEFT JOIN
-    tv_show_genres AS s
+    tv_show_genres
 ON
-    t.id = s.show_id
+    tv_shows.id = tv_show_genres.show_id
 LEFT JOIN
-    tv_genres AS g
+    tv_genres
 ON
-    s.genre_id = g.id
+    tv_show_genres.genre_id = tv_genres.id
 ORDER BY
-    t.title, g.name;
+    title, name ASC;

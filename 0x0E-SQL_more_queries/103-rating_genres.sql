@@ -2,18 +2,17 @@
 -- Results must be sorted in descending order by their rating
 -- The database name will be passed as an argument of the mysql command
 SELECT
-    tg.name AS 'name',
-    SUM(tsr.rate) AS 'rating'
+    name, SUM(rate) AS rating
 FROM
-    tv_genres tg
+    tv_genres
 LEFT JOIN
-    tv_show_genres tsg
+    tv_show_genres
 ON
-    tg.id = tsg.genre_id
+    tv_genres.id = tv_show_genres.genre_id
 LEFT JOIN
-    tv_show_ratings tsr
+    tv_show_ratings
 ON
-    tsg.show_id = tsr.show_id
+    tv_show_genres.show_id = tv_show_ratings.show_id
 GROUP BY
     name
 ORDER BY
