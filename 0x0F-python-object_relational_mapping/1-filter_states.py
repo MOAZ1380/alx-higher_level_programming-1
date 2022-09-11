@@ -15,8 +15,8 @@ def filterStates(params: list) -> None:
         params (list): List of arguments given to script
     """
     query: str = """
-    SELECT * FROM states
-    WHERE name LIKE 'N%' ORDER BY id ASC"""
+    SELECT * FROM `states`
+    WHERE BINARY `name` LIKE 'N%' ORDER BY `id` ASC"""
     try:
         conn: MySQLdb.Connection = MySQLdb.connect(
             host="localhost", port=3306, user=params[0],
