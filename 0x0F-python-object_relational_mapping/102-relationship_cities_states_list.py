@@ -1,14 +1,12 @@
 #!/usr/bin/python3
 
 """
-A script that lists all State objects, and
-corresponding City objects, contained in the database hbtn_0e_101_usa
+A script that lists all City objects from the database hbtn_0e_101_usa
 """
 
 from sys import argv
-from relationship_city import City
 from sqlalchemy.engine import Engine
-from relationship_state import State
+from relationship_city import City
 from sqlalchemy import create_engine
 from sqlalchemy.orm import Session, sessionmaker
 
@@ -28,8 +26,6 @@ def createSession(args: list) -> Session:
 
 if __name__ == '__main__':
     session: Session = createSession(argv[1:])
-    for state in session.query(State).order_by(State.id):
-        print(f'{state.id}: {state.name}')
-        for city in state.cities:
-            print(f'\t{city.id}: {city.name}')
+    for city in session.query(City).order_by(City.id):
+        print('{}: {} -> {}'.format(city.id, city.name, city.state.name))
     session.close()
