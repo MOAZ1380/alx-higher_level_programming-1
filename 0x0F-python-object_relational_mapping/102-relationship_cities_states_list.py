@@ -27,5 +27,5 @@ def createSession(args: list) -> Session:
 if __name__ == '__main__':
     session: Session = createSession(argv[1:])
     for city in session.query(City).order_by(City.id):
-        print('{}: {} -> {}'.format(city.id, city.name, city.state.name))
+        print(f'{city.id}: {city.name} -> {city.state.name}')
     session.close()
