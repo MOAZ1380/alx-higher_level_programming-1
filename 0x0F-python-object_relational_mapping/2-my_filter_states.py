@@ -17,7 +17,7 @@ def filterStatesByUserInput(params: list) -> None:
     """
     query: str = """
     SELECT * FROM states
-    WHERE name = '{}' ORDER BY id ASC""".format(params[3])
+    WHERE states.name = '{}' ORDER BY states.id ASC""".format(params[3])
     try:
         conn: MySQLdb.Connection = MySQLdb.connect(
             host="localhost", port=3306, user=params[0],
