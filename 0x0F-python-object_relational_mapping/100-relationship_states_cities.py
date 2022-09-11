@@ -15,6 +15,8 @@ from sqlalchemy.orm import Session, sessionmaker
 
 def createSession(args: list) -> Session:
     """Create a MySQL database session
+    Args:
+        args (list): List of arguments passed to the script
     """
     engine: Engine = create_engine(
         'mysql+mysqldb://{}:{}@localhost/{}'.format(args[0], args[1], args[2]),
