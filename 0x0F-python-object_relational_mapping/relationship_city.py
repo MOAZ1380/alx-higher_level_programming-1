@@ -4,8 +4,10 @@
 A script that defines model City via SQLAlchemy ORM
 """
 
-from relationship_state import Base
+from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy import Column, ForeignKey, Integer, String
+
+Base: declarative_base = declarative_base()
 
 
 class City(Base):
